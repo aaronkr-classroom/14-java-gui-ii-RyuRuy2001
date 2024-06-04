@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class Ex1404 extends JFrame {
 	
@@ -52,6 +53,64 @@ public class Ex1404 extends JFrame {
 		JLabel lbl2 = new JLabel("");
 		resPanel.add(lbl2);
 		
+		// +ActionListener 추가
+		plus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == plus) {
+					// 더하기 버튼인지 확인
+					// 텍스트 필드에 입력된 숫자 얻어오기
+					int num01 = Integer.parseInt(num1.getText());
+					int num02 = Integer.parseInt(num2.getText());
+							
+					int result = num01 + num02;
+					lbl2.setText(String.valueOf(result));
+					
+				}
+			}
+		});
+		
+		minus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == minus) {
+					// 텍스트 필드에 입력된 숫자 얻어오기
+					int num01 = Integer.parseInt(num1.getText());
+					int num02 = Integer.parseInt(num2.getText());
+							
+					int result = num01 - num02;
+					lbl2.setText(String.valueOf(result));
+					
+				}
+			}
+		});
+		
+		
+		mult.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == mult) {
+					// 텍스트 필드에 입력된 숫자 얻어오기
+					int num01 = Integer.parseInt(num1.getText());
+					int num02 = Integer.parseInt(num2.getText());
+							
+					int result = num01 * num02;
+					lbl2.setText(String.valueOf(result));
+					
+				}
+			}
+		});
+		
+		div.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == div) {
+					// 텍스트 필드에 입력된 숫자 얻어오기
+					int num01 = Integer.parseInt(num1.getText());
+					int num02 = Integer.parseInt(num2.getText());
+							
+					int result = num01 / num02;
+					lbl2.setText(String.valueOf(result));
+					
+				}
+			}
+		});
 		// 프레임 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(null);
